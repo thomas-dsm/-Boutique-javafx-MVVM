@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FenetrePrincipale">
+   <left>
+      <VBox prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Tous" />
+            <ListView fx:id="listArticle" />
+            <Button onAction="#ajouterHabit" mnemonicParsing="false" text="Ajouter un habit" />
+            <Button onAction="#ajouterParfum" mnemonicParsing="false" text="Ajouter un parfum" />
+            <Button onAction="#supprimerArticle" mnemonicParsing="false" text="Supprimer l'article selectionné" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
