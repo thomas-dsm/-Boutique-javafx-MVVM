@@ -8,8 +8,11 @@ import model.Article;
 import model.Habit;
 import model.Parfum;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-public abstract class ArticleVM {
+
+public abstract class ArticleVM implements PropertyChangeListener {
     private Article model;
     private StringProperty nom = new SimpleStringProperty();
     private FloatProperty prix = new SimpleFloatProperty();
@@ -41,4 +44,6 @@ public abstract class ArticleVM {
     public Article getModel() {
         return model;
     }
+
+    public abstract void propertyChange(PropertyChangeEvent evt);
 }

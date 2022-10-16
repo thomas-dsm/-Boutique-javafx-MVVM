@@ -30,15 +30,15 @@ public abstract class Article implements Serializable {
         getSupport().firePropertyChange(PROP_PRIX, oldPrix, this.prix);
     }
 
-    public void ajouterProperty(PropertyChangeListener listener){
-        support.addPropertyChangeListener(listener);
-    }
-
-    private PropertyChangeSupport getSupport() {
+    public PropertyChangeSupport getSupport() {
         if (support == null){
             support = new PropertyChangeSupport(this);
         }
         return support;
+    }
+
+    public void ajouterListener(PropertyChangeListener listener){
+        getSupport().addPropertyChangeListener(listener);
     }
 
     public Article(String nom, float prix) {

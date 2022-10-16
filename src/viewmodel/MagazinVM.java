@@ -34,10 +34,9 @@ public class MagazinVM implements PropertyChangeListener {
             try{
                 this.model = new Chargeur().load();
             } catch (Exception e){
+                System.out.println("Erreur => Chargement du stub");
                 this.model = new Magazin(new Stub().creerMagazin());
             }
-            //this.model = new Chargeur().load();
-            //this.model = new Magazin(new Stub().creerMagazin());
 
             for(Article article : model.getListArticles()){
                 if (article instanceof Parfum parfum){
@@ -46,6 +45,7 @@ public class MagazinVM implements PropertyChangeListener {
                     lesArticles.add(new HabitVM(habit));
                 }
             }
+
             model.ajouterListener(this);
     }
 

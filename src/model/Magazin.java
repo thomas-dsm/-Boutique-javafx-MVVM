@@ -27,10 +27,6 @@ public class Magazin implements Serializable {
         return Collections.unmodifiableList(listArticles);
     }
 
-    public void setListArticles(List<Article> listArticles) {
-        this.listArticles = listArticles;
-    }
-
     public void ajouterArticle(Article article) {
         listArticles.add(article);
         getSupport().firePropertyChange(PROP_LIST_ADD, null, article);
